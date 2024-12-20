@@ -1,4 +1,5 @@
-import React, { useState, Suspense } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import moment from "moment";
 import geminiIcon from "../assets/gemini.webp";
 
@@ -131,6 +132,15 @@ const Task = ({
       </div>
     </div>
   );
+};
+
+Task.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  dueDate: PropTypes.string,
+  isCompleted: PropTypes.bool,
+  setIsCompleted: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default Task;

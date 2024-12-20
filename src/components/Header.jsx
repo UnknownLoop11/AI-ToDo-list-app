@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../utils/Context";
+import logoIcon from "../assets/logo.svg";
 
 import moment from "moment";
 
@@ -13,7 +14,10 @@ const Header = () => {
   return (
     <header className="p-4 flex flex-row items-center justify-between">
       <div className="space-y-1">
-        <h1 className="text-2xl font-bold">To-Do</h1>
+        <div className="flex items-center gap-x-2 drop-shadow-lg ">
+          <img src={logoIcon} alt="Logo" className="w-8 h-8" />
+          <h1 className="text-2xl font-bold">To-Do</h1>
+        </div>
         <p className="text-sm text-gray-500">
           {moment(Date()).format("dddd, D MMMM")}
         </p>
